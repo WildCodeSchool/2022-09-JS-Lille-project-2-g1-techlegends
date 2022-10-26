@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
 export default styled.section`
-  background-color: red;
+  img {
+    margin: 20vmin;
+  }
 `;
