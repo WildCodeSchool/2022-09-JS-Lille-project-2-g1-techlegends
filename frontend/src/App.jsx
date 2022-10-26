@@ -1,13 +1,15 @@
 import Home from "./pages/Home";
 
-import "./reset.css";
-import "./App.css";
+import MainStyle from "./style";
+import ResetCSS from "./ResetCSS";
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <ResetCSS>
+      <MainStyle>
+        <Home />
+      </MainStyle>
+    </ResetCSS>
   );
 }
 
