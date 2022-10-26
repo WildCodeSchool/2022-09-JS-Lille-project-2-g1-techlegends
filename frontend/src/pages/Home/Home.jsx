@@ -1,12 +1,12 @@
-import Button from "@components/button/Button";
-import Screen from "@components/screen/Screen";
-import HomeStyle from "./Style";
+import Header from "@components/Header/Header";
+import logo from "@assets/Logo.png";
+import Homestyle from "./style";
 
 export default function Home() {
   return (
-    <HomeStyle>
-      <Screen />
-      <Button />
-    </HomeStyle>
+    <Homestyle>
+      <Header />
+      <img src={logo} alt="Logo Tech Legend" />
+    </Homestyle>
   );
 }
