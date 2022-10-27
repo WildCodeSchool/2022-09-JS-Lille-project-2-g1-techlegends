@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState } from "react";
-import ReactPlayer from "react-player";
 import Styled from "./style";
 
 export default function API() {
@@ -26,8 +25,14 @@ export default function API() {
         {datas.map((element) => (
           <div key={element.etag}>
             <li>{element.snippet.title}</li>
-            <ReactPlayer
-              url={`https://www.youtube.com/embed/${element.id.videoId}`}
+            <iframe
+              width="560"
+              height="315"
+              src={`https://www.youtube.com/embed/${element.id.videoId}`}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
             />
           </div>
         ))}
