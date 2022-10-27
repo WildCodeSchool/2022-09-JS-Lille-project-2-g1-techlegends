@@ -1,5 +1,3 @@
 import styled from "styled-components";
 
-export default styled.div`
-  background-color: red;
-`;
+export default styled.div``;
