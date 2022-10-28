@@ -4,6 +4,7 @@ import Styled from "./style";
 
 export default function API() {
   const [datas, SetDatas] = useState([]);
+  const songs = [];
   const getData = () => {
     axios
       .get(
@@ -16,27 +17,37 @@ export default function API() {
         SetDatas(data.items);
       });
   };
+  const questionSongs = [];
+  if (datas) {
+    datas.map((element) => songs.push(element));
+    for (let i = 0; i < 4; i += 1) {
+      questionSongs.push(songs[Math.floor(Math.random() * songs.length)]);
+    }
+  }
+
   return (
-    datas && (
-      <Styled>
-        <button type="button" onClick={getData}>
-          Récupérer les données
-        </button>
-        {datas.map((element) => (
-          <div key={element.etag}>
-            <li>{element.snippet.title}</li>
-            <iframe
-              width="560"
-              height="315"
-              src={`https://www.youtube.com/embed/${element.id.videoId}`}
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        ))}
-      </Styled>
-    )
+    <Styled>
+      <button type="button" onClick={getData}>
+        Récupérer les données
+      </button>
+      {questionSongs[0] ? (
+        <>
+          <iframe
+            width="560"
+            height="315"
+            src={`https://www.youtube.com/embed/${questionSongs[0].id.videoId}`}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+          {questionSongs.map((element) => (
+            <li>{element.snippet.title.replace("Official Music Video", "")}</li>
+          ))}
+        </>
+      ) : (
+        <li>Actualisez la page</li>
+      )}
+    </Styled>
   );
 }
