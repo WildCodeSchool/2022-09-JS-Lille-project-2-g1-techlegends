@@ -9,7 +9,7 @@ export default function API() {
     axios
       .get(
         `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=official%20music%20video&type=video&key=${
-          import.meta.env.YoutubeKey
+          import.meta.env.VITE_YoutubeKey
         }`
       )
       // Extract the DATA from the received response
