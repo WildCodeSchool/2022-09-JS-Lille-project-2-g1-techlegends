@@ -1,4 +1,3 @@
-import "./App.css";
 import Home from "@pages/Home/Home";
 import Rules from "@pages/Rules/Rules";
 import Game from "@pages/Game/Game";

@@ -1,12 +1,12 @@
 import Header from "@components/Header/Header";
 import logo from "@assets/Logo.png";
-import Homestyle from "./style";
+import HomeStyle from "./Style";
 
 export default function Home() {
   return (
-    <Homestyle>
+    <HomeStyle>
       <Header />
       <img src={logo} alt="Logo Tech Legend" />
-    </Homestyle>
+    </HomeStyle>
   );
 }
