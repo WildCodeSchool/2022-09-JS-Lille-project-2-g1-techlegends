@@ -3,18 +3,20 @@ import { useState } from "react";
 import Styled from "./style";
 
 export default function API() {
-  const [datas, SetDatas] = useState([]);
-  const songs = [];
+  const [datas, setDatas] = useState([]);
+  const [songs] = useState([]);
   const getData = () => {
     axios
       .get(
-        "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=official%20music%20video&type=video&key=AIzaSyCm7q9wrUPRGABUb-mtODNo5Eiad9Btdh0"
+        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=official%20music%20video&type=video&key=${
+          import.meta.env.YoutubeKey
+        }`
       )
       // Extract the DATA from the received response
       .then((response) => response.data)
       // Use this data to update the state
       .then((data) => {
-        SetDatas(data.items);
+        setDatas(data.items);
       });
   };
   const questionSongs = [];
