@@ -4,14 +4,17 @@ import Rules from "@pages/Rules/Rules";
 import Game from "@pages/Game/Game";
 import Score from "@pages/Score/Score";
 
+import "reset-css";
+import MainStyle from "./style";
+
 function App() {
   return (
-    <div className="App">
+    <MainStyle>
       <Home />
       <Rules />
       <Game />
       <Score />
-    </div>
+    </MainStyle>
   );
 }
 

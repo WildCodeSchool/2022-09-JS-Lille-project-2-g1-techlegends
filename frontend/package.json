@@ -15,7 +15,8 @@
     "react-dom": "^18.0.0",
     "react-player": "^2.11.0",
     "styled-components": "^5.3.6",
-    "template-fullstack": "file:.."
+    "template-fullstack": "file:..",
+    "reset-css": "^5.0.1",
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",
