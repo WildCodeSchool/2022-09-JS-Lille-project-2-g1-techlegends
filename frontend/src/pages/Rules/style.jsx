@@ -14,6 +14,7 @@ export default styled.section`
   }
 
   p {
+    text-align: center;
     margin: 8rem;
   }
 
