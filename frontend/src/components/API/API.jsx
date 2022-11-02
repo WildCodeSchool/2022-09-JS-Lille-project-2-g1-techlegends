@@ -7,6 +7,7 @@ export default function API() {
   const getData = () => {
     setSongs(cleanDatas);
   };
+  const regex = /\(.*\)|\[.*\]/;
 
   return (
     <Styled>
@@ -26,7 +27,13 @@ export default function API() {
             allowFullScreen
           />
           {songs.map((element) => (
-            <li>{element.title}</li>
+            <li>
+              {element.title
+                .replace(regex, "")
+                .replaceAll("&#39;", "'")
+                .replaceAll("&amp;", "&")
+                .replaceAll("&quot;", '"')}
+            </li>
           ))}
         </>
       ) : (
