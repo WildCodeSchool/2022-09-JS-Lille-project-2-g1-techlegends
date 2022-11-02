@@ -1,4 +1,4 @@
-const datas = require("./raw");
+import datas from "./raw";
 
 const cleanDatas = datas.map((element) => {
   return {
@@ -6,5 +6,4 @@ const cleanDatas = datas.map((element) => {
     title: element.snippet.title,
   };
 });
-console.log(cleanDatas);
 export default cleanDatas;
