@@ -7,6 +7,7 @@ export default function API() {
   const getData = () => {
     setSongs(cleanDatas);
   };
+
   const regex = /\(.*\)|\[.*\]/;
 
   return (
