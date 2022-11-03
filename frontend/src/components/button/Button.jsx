@@ -1,6 +1,7 @@
+import PropTypes from "prop-types";
 import ButtonStyle from "./style";
 
-export default function Button(valueOne, valueTwo, valueThree, valueFour) {
+export default function Button({ valueOne, valueTwo, valueThree, valueFour }) {
   return (
     <ButtonStyle className="response">
       <div className="right">
@@ -14,3 +15,10 @@ export default function Button(valueOne, valueTwo, valueThree, valueFour) {
     </ButtonStyle>
   );
 }
+
+Button.propTypes = {
+  valueOne: PropTypes.string.isRequired,
+  valueTwo: PropTypes.string.isRequired,
+  valueThree: PropTypes.string.isRequired,
+  valueFour: PropTypes.string.isRequired,
+};
