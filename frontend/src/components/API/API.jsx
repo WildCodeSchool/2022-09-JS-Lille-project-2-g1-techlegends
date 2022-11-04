@@ -6,6 +6,8 @@ import Styled from "./style";
 export default function API() {
   const [songs, setSongs] = useState([]);
   const [answerId, setAnswerId] = useState("");
+  const [counter, setCounter] = useState(0);
+
   const getData = () => {
     const shuffle = [];
 
@@ -29,19 +31,22 @@ export default function API() {
           <iframe
             width="560"
             height="315"
-            src={`https://www.youtube.com/embed/${answerId.videoId}`}
+            src={`https://www.youtube.com/embed/${answerId.videoId}?autoplay=1`}
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
           {songs.map((element) => (
-            <Button answerId={answerId.title} value={element.title} />
+            <Button
+              answerId={answerId.title}
+              value={element.title}
+              counter={counter}
+              setCounter={setCounter}
+              getData={getData}
+            />
           ))}
-
-          <button type="button" onClick={getData}>
-            Question suivante
-          </button>
+          <p> SCORE : {counter === 0 ? "0 point" : `${counter} points!`} </p>
         </>
       ) : (
         <li>Actualisez la page</li>
