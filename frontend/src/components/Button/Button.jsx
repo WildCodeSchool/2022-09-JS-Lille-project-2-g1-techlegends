@@ -2,8 +2,15 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Style from "./style";
 
-export default function Button({ value, answerId }) {
+export default function Button({
+  value,
+  answerId,
+  counter,
+  setCounter,
+  getData,
+}) {
   const [isActive, setActive] = useState(false);
   const notify = () =>
     toast.success("GOOD", {
@@ -14,23 +21,37 @@ export default function Button({ value, answerId }) {
       position: toast.POSITION.BOTTOM_LEFT,
     });
 
+  const regex = /\(.*\)|\[.*\]/;
+
   const goodAnswer = () => {
     if (answerId === value) {
       setActive(!isActive);
       notify();
+      setCounter(counter + 100);
+      getData();
     } else {
-      setActive(isActive);
       notify2();
+      setActive(isActive);
+      getData();
     }
   };
   return (
-    <button type="button" onClick={goodAnswer}>
-      {value}
-    </button>
+    <Style>
+      <button type="button" onClick={goodAnswer}>
+        {value
+          .replace(regex, "")
+          .replaceAll("&#39;", "'")
+          .replaceAll("&amp;", "&")
+          .replaceAll("&quot;", '"')}
+      </button>
+    </Style>
   );
 }
 
 Button.propTypes = {
   value: PropTypes.string.isRequired,
   answerId: PropTypes.string.isRequired,
+  getData: PropTypes.func.isRequired,
+  setCounter: PropTypes.func.isRequired,
+  counter: PropTypes.number.isRequired,
 };

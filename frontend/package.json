@@ -17,7 +17,8 @@
     "react-player": "^2.11.0",
     "react-toastify": "^9.1.1",
     "reset-css": "^5.0.1",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "template-fullstack": "file:.."
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",
