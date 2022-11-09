@@ -1,13 +1,23 @@
-import cleanDatas from "@assets/mapper";
+import axios from "axios";
 import { useState } from "react";
-import Styled from "./style";
+import Styled from "../components/API/style";
 
 export default function API() {
   const [songs, setSongs] = useState([]);
   const getData = () => {
-    setSongs(cleanDatas);
+    axios
+      .get(
+        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&order=viewCount&q=official%20music%201970%7C1971%7C1972%7C1973%7C1974%7C1975%7C1976%7C1977%7C1978%7C1979video&key=${
+          import.meta.env.VITE_YoutubeKey
+        }`
+      )
+      // Extract the DATA from the received response
+      .then((response) => response.data)
+      // Use this data to update the state
+      .then((data) => {
+        setSongs(data.items);
+      });
   };
-
   const regex = /\(.*\)|\[.*\]/;
 
   return (
@@ -28,9 +38,8 @@ export default function API() {
             allowFullScreen
           />
           {songs.map((element) => (
-
             <li>
-              {element.title
+              {element.snippet.title
                 .replace(regex, "")
                 .replaceAll("&#39;", "'")
                 .replaceAll("&amp;", "&")
