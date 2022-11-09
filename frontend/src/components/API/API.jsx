@@ -28,6 +28,7 @@ export default function API() {
             allowFullScreen
           />
           {songs.map((element) => (
+
             <li>
               {element.title
                 .replace(regex, "")

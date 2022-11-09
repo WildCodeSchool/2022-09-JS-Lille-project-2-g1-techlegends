@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export default styled.section`
   position: relative;
-  top: -10%;
+  top: 25%;
   display: flex;
   justify-content: center;
 
