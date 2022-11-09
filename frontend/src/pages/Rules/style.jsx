@@ -13,8 +13,11 @@ export default styled.section`
     color: #551e19;
   }
 
-  p {
+  .Welcome {
     margin: 8rem;
+    display: block;
+    margin-left: 15%;
+    margin-right: 15%;
   }
 
   div.rightLeft {
@@ -23,6 +26,21 @@ export default styled.section`
 
   .left,
   .right {
-    padding: 0 6rem;
+    /* padding: 0 4rem; */
+    margin-top: 12%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: wrap;
+  }
+  .left {
+    margin-right: 12%;
+    width: 100%;
+  }
+  .right {
+    width: 100%;
+  }
+  .rightLeft {
+    width: 50%;
+    margin: auto;
   }
 `;

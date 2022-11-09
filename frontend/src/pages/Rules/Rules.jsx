@@ -6,7 +6,7 @@ export default function Rules() {
       <h2>
         Régles <span>du Jeu</span>
       </h2>
-      <p>
+      <p className="Welcome">
         Bienvenue dans le blind test proposé par les <span>Tech Legend</span> .
         Mais qu'est ce qu'un blind test me dirais vous?
       </p>

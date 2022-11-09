@@ -4,6 +4,11 @@ export default styled.article`
   position: relative;
   top: -20%;
   left: 33%;
-  z-index: 10;
-  opacity: 0.1;
+  opacity: 0.2;
+
+  @media (max-width: 768px) {
+    position: relative;
+    top: 20%;
+    left: 0%;
+  }
 `;
