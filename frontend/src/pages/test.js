@@ -1,31 +1,29 @@
-import Button from "@components/Button/Button";
-import cleanDatas from "@assets/mapper";
+import axios from "axios";
 import { useState } from "react";
-import Styled from "./style";
+import Styled from "../components/API/style";
 
 export default function API() {
   const [songs, setSongs] = useState([]);
-  const [answerId, setAnswerId] = useState("");
-  const [counter, setCounter] = useState(0);
-
   const getData = () => {
-    const shuffle = [];
-
-    for (let i = 0; i < 4; i += 1) {
-      shuffle.push(cleanDatas[Math.floor(Math.random() * cleanDatas.length)]);
-    }
-
-    setSongs(shuffle);
-
-    setAnswerId(shuffle[Math.floor(Math.random() * shuffle.length)]);
+    axios
+      .get(
+        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&order=viewCount&q=official%20music%201970%7C1971%7C1972%7C1973%7C1974%7C1975%7C1976%7C1977%7C1978%7C1979video&key=${
+          import.meta.env.VITE_YoutubeKey
+        }`
+      )
+      // Extract the DATA from the received response
+      .then((response) => response.data)
+      // Use this data to update the state
+      .then((data) => {
+        setSongs(data.items);
+      });
   };
-
   const regex = /\(.*\)|\[.*\]/;
 
   return (
     <Styled>
       <button type="button" onClick={getData}>
-        Lancer la partie
+        Récupérer les données
       </button>
 
       {songs[0] ? (
@@ -33,26 +31,21 @@ export default function API() {
           <iframe
             width="560"
             height="315"
-            src={`https://www.youtube.com/embed/${answerId.videoId}?autoplay=1`}
+            src={`https://www.youtube.com/embed/${songs[0].videoId}`}
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
           {songs.map((element) => (
-            <Button
-              answerId={answerId.title}
-              value={element.title
+            <li>
+              {element.snippet.title
                 .replace(regex, "")
                 .replaceAll("&#39;", "'")
                 .replaceAll("&amp;", "&")
                 .replaceAll("&quot;", '"')}
-              counter={counter}
-              setCounter={setCounter}
-              getData={getData}
-            />
+            </li>
           ))}
-          <p> SCORE : {counter === 0 ? "0 point" : `${counter} points!`} </p>
         </>
       ) : (
         <li>Actualisez la page</li>
