@@ -715,7 +715,7 @@
   },
   {
     "kind": "youtube#searchResult",
-  "url": "https://i.ytimg.com/vi/u9Dg-g7t2l4/default.jpg",
+    "url": "https://i.ytimg.com/vi/u9Dg-g7t2l4/default.jpg",
     "etag": "yBrjm0yHQBgwKW7FX0MwQkOl_S0",
     "id": {
       "kind": "youtube#video",

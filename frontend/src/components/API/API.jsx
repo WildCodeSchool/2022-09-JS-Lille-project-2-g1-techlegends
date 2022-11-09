@@ -1,19 +1,29 @@
+import Button from "@components/Button/Button";
 import cleanDatas from "@assets/mapper";
 import { useState } from "react";
 import Styled from "./style";
 
 export default function API() {
   const [songs, setSongs] = useState([]);
-  const getData = () => {
-    setSongs(cleanDatas);
-  };
+  const [answerId, setAnswerId] = useState("");
+  const [counter, setCounter] = useState(0);
 
-  const regex = /\(.*\)|\[.*\]/;
+  const getData = () => {
+    const shuffle = [];
+
+    for (let i = 0; i < 4; i += 1) {
+      shuffle.push(cleanDatas[Math.floor(Math.random() * cleanDatas.length)]);
+    }
+
+    setSongs(shuffle);
+
+    setAnswerId(shuffle[Math.floor(Math.random() * shuffle.length)]);
+  };
 
   return (
     <Styled>
       <button type="button" onClick={getData}>
-        Récupérer les données
+        Lancer la partie
       </button>
 
       {songs[0] ? (
@@ -21,22 +31,22 @@ export default function API() {
           <iframe
             width="560"
             height="315"
-            src={`https://www.youtube.com/embed/${songs[0].videoId}`}
+            src={`https://www.youtube.com/embed/${answerId.videoId}?autoplay=1`}
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
           {songs.map((element) => (
-
-            <li>
-              {element.title
-                .replace(regex, "")
-                .replaceAll("&#39;", "'")
-                .replaceAll("&amp;", "&")
-                .replaceAll("&quot;", '"')}
-            </li>
+            <Button
+              answerId={answerId.title}
+              value={element.title}
+              counter={counter}
+              setCounter={setCounter}
+              getData={getData}
+            />
           ))}
+          <p> SCORE : {counter === 0 ? "0 point" : `${counter} points!`} </p>
         </>
       ) : (
         <li>Actualisez la page</li>

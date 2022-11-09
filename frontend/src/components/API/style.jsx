@@ -7,4 +7,11 @@ export default styled.div`
   button {
     display: block;
   }
+  p {
+    font-size: 2rem;
+  }
+  iframe {
+    height: 0px;
+    width: 0px;
+  }
 `;
