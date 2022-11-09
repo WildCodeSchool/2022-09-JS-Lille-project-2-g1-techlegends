@@ -1,6 +1,7 @@
 import Button from "@components/Button/Button";
 import cleanDatas from "@assets/mapper";
 import { useState } from "react";
+import Countdown from "@components/API/count";
 import Styled from "./style";
 
 export default function API() {
@@ -42,6 +43,8 @@ export default function API() {
           <button type="button" onClick={getData}>
             Question suivante
           </button>
+
+          <Countdown />
         </>
       ) : (
         <li>Actualisez la page</li>
