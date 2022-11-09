@@ -20,8 +20,6 @@ export default function API() {
     setAnswerId(shuffle[Math.floor(Math.random() * shuffle.length)]);
   };
 
-  const regex = /\(.*\)|\[.*\]/;
-
   return (
     <Styled>
       <button type="button" onClick={getData}>
@@ -42,11 +40,7 @@ export default function API() {
           {songs.map((element) => (
             <Button
               answerId={answerId.title}
-              value={element.title
-                .replace(regex, "")
-                .replaceAll("&#39;", "'")
-                .replaceAll("&amp;", "&")
-                .replaceAll("&quot;", '"')}
+              value={element.title}
               counter={counter}
               setCounter={setCounter}
               getData={getData}

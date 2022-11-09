@@ -11,6 +11,8 @@ export default function Button({
 }) {
   const [isActive, setActive] = useState(false);
 
+  const regex = /\(.*\)|\[.*\]/;
+
   const goodAnswer = () => {
     if (answerId === value) {
       setActive(!isActive);
@@ -26,7 +28,11 @@ export default function Button({
   return (
     <Style>
       <button type="button" onClick={goodAnswer}>
-        {value}
+        {value
+          .replace(regex, "")
+          .replaceAll("&#39;", "'")
+          .replaceAll("&amp;", "&")
+          .replaceAll("&quot;", '"')}
       </button>
     </Style>
   );
