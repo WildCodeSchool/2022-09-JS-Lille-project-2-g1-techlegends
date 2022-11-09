@@ -1,7 +1,7 @@
-import Home from "@pages/Home/Home";
-import Rules from "@pages/Rules/Rules";
-import Game from "@pages/Game/Game";
-import Score from "@pages/Score/Score";
+// import Home from "@pages/Home/Home";
+// import Rules from "@pages/Rules/Rules";
+// import Game from "@pages/Game/Game";
+// import Score from "@pages/Score/Score";
 
 import "reset-css";
 import Research from "@components/Reserch/Research";
@@ -10,10 +10,10 @@ import MainStyle from "./style";
 function App() {
   return (
     <MainStyle>
-      <Home />
+      {/* <Home />
       <Rules />
       <Game />
-      <Score />
+      <Score /> */}
       <Research />
     </MainStyle>
   );

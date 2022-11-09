@@ -1,21 +1,43 @@
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import ResearchStyle from "./Style";
+import Search from "@components/Search/Search";
+import { useState } from "react";
+import Modal from "react-modal";
+
+const customStyles = {
+  content: {
+    top: "20%",
+    left: "20%",
+    right: "20%",
+    bottom: "20%",
+  },
+};
 
 export default function Research() {
-  const lunchGame = () =>
-    toast(
-      <ResearchStyle>
-        <input type="text" placeholder="Artiste, style,..." />
-        <button type="submit">Jouer</button>
-      </ResearchStyle>
-    );
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
   return (
     <>
-      <button type="button" onClick={lunchGame}>
-        Blind test
+      <button type="submit" onClick={openModal}>
+        Jouer
       </button>
-      <ToastContainer />
+      <Modal
+        isOpen={modalIsOpen}
+        style={customStyles}
+        contentLabel="ExempleModal"
+      >
+        <form>
+          <button type="submit" onClick={closeModal}>
+            X
+          </button>
+          <Search />
+        </form>
+      </Modal>
     </>
   );
 }
