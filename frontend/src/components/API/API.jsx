@@ -1,4 +1,4 @@
-import Button from "@components/Button/Button";
+import Button from "@components/Button/Response";
 import cleanDatas from "@assets/mapper";
 import { useState } from "react";
 import Countdown from "@components/API/count";

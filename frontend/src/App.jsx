@@ -1,4 +1,3 @@
-import API from "@components/API/API";
 import Toast from "@components/API/Toast";
 import Home from "@pages/Home/Home";
 import Rules from "@pages/Rules/Rules";
@@ -15,7 +14,6 @@ function App() {
       <Rules />
       <Game />
       <Score />
-      <API />
     </MainStyle>
   );
 }
