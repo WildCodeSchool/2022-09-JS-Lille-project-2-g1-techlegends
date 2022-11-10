@@ -1,7 +1,7 @@
 import Button from "@components/Button/Response";
 import cleanDatas from "@assets/mapper";
 import { useState } from "react";
-import Countdown from "@components/API/count";
+import Countdown from "@components/Timer/Timer";
 import Styled from "./style";
 
 export default function API() {

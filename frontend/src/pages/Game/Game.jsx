@@ -1,4 +1,5 @@
 import cleanDatas from "@assets/mapper";
+import Countdown from "@components/Timer/Timer";
 import Toast from "@components/Toastify/Toast";
 import Response from "@components/Button/Response";
 import Video from "@components/video/Video";
@@ -41,6 +42,8 @@ export default function Game() {
               getData={getData}
             />
           ))}
+          <p> SCORE : {counter === 0 ? "0 point" : `${counter} points!`} </p>
+          <Countdown />
         </>
       ) : (
         <li>Relancer le jeu</li>
