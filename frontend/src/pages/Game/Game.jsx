@@ -1,4 +1,5 @@
 import cleanDatas from "@assets/mapper";
+import Toast from "@components/Toastify/Toast";
 import Response from "@components/Button/Response";
 import Video from "@components/video/Video";
 import { useState } from "react";
@@ -27,8 +28,9 @@ export default function Game() {
       </button>
       {songs[0] ? (
         <>
+          <Toast />
           <Video
-            source={`https://www.youtube.com/watch?v=${answerId.videoId}?autoplay=1`}
+            source={`https://www.youtube.com/watch?v=${answerId.videoId}?autoplay=1?start=30`}
           />
           {songs.map((element) => (
             <Response

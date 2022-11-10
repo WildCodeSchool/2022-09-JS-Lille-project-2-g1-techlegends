@@ -5,11 +5,10 @@ import ScreenStyle from "./style";
 export default function Screen({ source }) {
   return (
     <ScreenStyle>
-      <ReactPlayer url={source} />
+      <ReactPlayer url={source} playing />
     </ScreenStyle>
   );
 }
-
 Screen.propTypes = {
   source: PropTypes.string.isRequired,
 };

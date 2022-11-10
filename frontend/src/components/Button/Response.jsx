@@ -11,17 +11,23 @@ export default function Button({
   setCounter,
   getData,
 }) {
+  const regex = /\(.*\)|\[.*\]/;
   const [isActive, setActive] = useState(false);
   const notify = () =>
     toast.success("GOOD", {
       position: toast.POSITION.TOP_LEFT,
     });
   const notify2 = () =>
-    toast.error(`VA CHERCHER TON OREILLE ! La bonne réponse est ${answerId}`, {
-      position: toast.POSITION.TOP_LEFT,
-    });
-
-  const regex = /\(.*\)|\[.*\]/;
+    toast.error(
+      `VA CHERCHER TON OREILLE ! La bonne réponse est ${answerId
+        .replace(regex, "")
+        .replaceAll("&#39;", "'")
+        .replaceAll("&amp;", "&")
+        .replaceAll("&quot;", '"')}`,
+      {
+        position: toast.POSITION.TOP_LEFT,
+      }
+    );
 
   const goodAnswer = () => {
     if (answerId === value) {

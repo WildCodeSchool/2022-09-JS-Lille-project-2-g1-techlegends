@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import image from "@assets/bgGame.png";
+import image from "@assets/Transistor.png";
 
 export default styled.section`
   height: 95vh;

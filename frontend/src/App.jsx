@@ -1,4 +1,3 @@
-import Toast from "@components/API/Toast";
 import Home from "@pages/Home/Home";
 import Rules from "@pages/Rules/Rules";
 import Game from "@pages/Game/Game";
@@ -10,7 +9,6 @@ function App() {
   return (
     <MainStyle>
       <Home />
-      <Toast />
       <Rules />
       <Game />
       <Score />
