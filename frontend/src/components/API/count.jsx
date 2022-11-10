@@ -4,12 +4,12 @@ import "react-toastify/dist/ReactToastify.css";
 import PropTypes from "prop-types";
 
 export default function Countdown(props) {
-  const { startingMinutes = 0, startingSeconds = 5 } = props;
+  const { startingMinutes = 1, startingSeconds = 30 } = props;
   const [mins, setMinutes] = useState(startingMinutes);
   const [secs, setSeconds] = useState(startingSeconds);
   const notime = () =>
     toast.warning("LE TEMPS EST FINI JEUNE CABILLOT !", {
-      position: toast.POSITION.BOTTOM_LEFT,
+      position: toast.POSITION.TOP_LEFT,
     });
   useEffect(() => {
     const sampleInterval = setInterval(() => {

@@ -14,11 +14,11 @@ export default function Button({
   const [isActive, setActive] = useState(false);
   const notify = () =>
     toast.success("GOOD", {
-      position: toast.POSITION.BOTTOM_LEFT,
+      position: toast.POSITION.TOP_LEFT,
     });
   const notify2 = () =>
     toast.error(`VA CHERCHER TON OREILLE ! La bonne réponse est ${answerId}`, {
-      position: toast.POSITION.BOTTOM_LEFT,
+      position: toast.POSITION.TOP_LEFT,
     });
 
   const regex = /\(.*\)|\[.*\]/;
