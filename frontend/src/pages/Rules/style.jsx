@@ -3,7 +3,15 @@ import styled from "styled-components";
 export default styled.section`
   height: 95vh;
   color: #c56e33;
-
+  .all {
+    display: flex;
+    flex-direction: row;
+    margin: 6rem;
+  }
+  img {
+    width: 150%;
+    margin: 2rem;
+  }
   h2 {
     text-align: center;
     font-size: 1.5rem;
@@ -14,16 +22,16 @@ export default styled.section`
   }
 
   p {
+    margin: 1rem;
+    padding-left: 25%;
     text-align: center;
-    margin: 8rem;
-  }
-
-  div.rightLeft {
+    width: 50%;
     display: flex;
+    flex-direction: column;
   }
-
-  .left,
-  .right {
-    padding: 0 6rem;
+  .texte {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
   }
 `;
