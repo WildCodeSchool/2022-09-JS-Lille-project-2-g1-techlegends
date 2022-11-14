@@ -9,9 +9,26 @@ export default styled.section`
   background-position: center;
 
   img {
-    width: 640px;
+    /* width: 640px;
     height: 360px;
     position: relative;
-    top: 20%;
+    top: 20%; */
   }
+  .PlayButton {
+    height: 6rem; 
+    width: auto;
+    border-radius: 5px;
+    background-color: #c56e33;
+
+    }
+    /* 
+    button {
+    height: 2rem;
+    width: 50rem;
+    margin: 1%;
+    background-color: #c56e33;
+    border: #551e19 2px solid;
+    border-radius: 5px;
+    margin-left: 20% ;
+  } */
 `;
