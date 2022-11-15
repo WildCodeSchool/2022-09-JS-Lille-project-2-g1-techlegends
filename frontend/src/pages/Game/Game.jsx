@@ -1,13 +1,26 @@
 import cleanDatas from "@assets/mapper";
-import Response from "@components/button/Button";
+import Countdown from "@components/Timer/Timer";
+import Toast from "@components/Toastify/Toast";
+import Response from "@components/Button/Response";
 import Video from "@components/video/Video";
 import { useState } from "react";
 import GameStyle from "./Style";
 
 export default function Game() {
   const [songs, setSongs] = useState([]);
+  const [answerId, setAnswerId] = useState("");
+  const [counter, setCounter] = useState(0);
+
   const getData = () => {
-    setSongs(cleanDatas);
+    const shuffle = [];
+
+    for (let i = 0; i < 4; i += 1) {
+      shuffle.push(cleanDatas[Math.floor(Math.random() * cleanDatas.length)]);
+    }
+
+    setSongs(shuffle);
+
+    setAnswerId(shuffle[Math.floor(Math.random() * shuffle.length)]);
   };
   return (
     <GameStyle>
@@ -16,19 +29,21 @@ export default function Game() {
       </button>
       {songs[0] ? (
         <>
-          {songs.map((element) => (
-            <Video
-              source={`https://www.youtube.com/watch?v=${element.videoId}`}
-            />
-          ))}
+          <Toast />
+          <Video
+            source={`https://www.youtube.com/watch?v=${answerId.videoId}?autoplay=1?start=30`}
+          />
           {songs.map((element) => (
             <Response
-              valueOne={element.title}
-              valueTwo={element.title}
-              valueThree={element.title}
-              valueFour={element.title}
+              answerId={answerId.title}
+              value={element.title}
+              counter={counter}
+              setCounter={setCounter}
+              getData={getData}
             />
           ))}
+          <p> SCORE : {counter === 0 ? "0 point" : `${counter} points!`} </p>
+          <Countdown />
         </>
       ) : (
         <li>Relancer le jeu</li>
