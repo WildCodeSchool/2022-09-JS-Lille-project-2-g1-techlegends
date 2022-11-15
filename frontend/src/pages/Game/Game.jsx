@@ -5,7 +5,6 @@ import Response from "@components/Button/Response";
 import Video from "@components/video/Video";
 import { useState } from "react";
 import GameStyle from "./Style";
-import Play from "@assets/Play.png";
 
 export default function Game() {
   const [songs, setSongs] = useState([]);
@@ -26,7 +25,7 @@ export default function Game() {
   return (
     <GameStyle>
       <button type="button" onClick={getData}>
-          <img className="PlayButton" src={Play}/>
+         Lancer le jeu
       </button>
       {songs[0] ? (
         <>
