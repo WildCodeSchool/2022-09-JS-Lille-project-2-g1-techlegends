@@ -7,7 +7,7 @@ export default function API() {
   const getData = () => {
     axios
       .get(
-        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&order=viewCount&q=official%20music%201970%7C1971%7C1972%7C1973%7C1974%7C1975%7C1976%7C1977%7C1978%7C1979video&key=${
+        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&order=viewCount&q=official%20music%20video&key=${
           import.meta.env.VITE_YoutubeKey
         }`
       )

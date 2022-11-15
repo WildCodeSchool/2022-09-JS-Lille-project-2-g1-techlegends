@@ -1,16 +1,26 @@
 import React, { useState, useEffect } from "react";
-import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+// import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PropTypes from "prop-types";
 
 export default function Countdown(props) {
-  const { startingMinutes = 1, startingSeconds = 30 } = props;
+  const { startingMinutes = 0, startingSeconds = 5 } = props;
   const [mins, setMinutes] = useState(startingMinutes);
   const [secs, setSeconds] = useState(startingSeconds);
-  const notime = () =>
-    toast.warning("LE TEMPS EST FINI JEUNE CABILLOT !", {
-      position: toast.POSITION.TOP_LEFT,
-    });
+  const navigate = useNavigate();
+
+  // const notime = () =>
+  //   toast.warning("LE TEMPS EST FINI JEUNE CABILLOT !", {
+  //     position: toast.POSITION.TOP_LEFT,
+  //   });
+
+  // const redirection = () => {
+  //   notime();
+  //   navigate("/score");
+
+  // }
+
   useEffect(() => {
     const sampleInterval = setInterval(() => {
       if (secs > 0) {
@@ -24,9 +34,6 @@ export default function Countdown(props) {
           setSeconds(59);
         }
       }
-      if (secs === 0 && mins === 0) {
-        notime();
-      }
     }, 1000);
     return () => {
       clearInterval(sampleInterval);
@@ -36,11 +43,11 @@ export default function Countdown(props) {
   return (
     <div>
       {mins === 0 && secs === 0 ? (
-        ""
+        navigate("/score")
       ) : (
         <p>
           {" "}
-          {mins}:{secs < 10 ? `0${secs}` : secs}
+          {mins} : {secs < 10 ? `0${secs}` : secs}
         </p>
       )}
     </div>

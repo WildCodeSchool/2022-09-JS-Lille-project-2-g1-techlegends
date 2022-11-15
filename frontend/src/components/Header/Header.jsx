@@ -1,12 +1,19 @@
+import { Link } from "react-router-dom";
 import NavStyle from "./style";
 
 export default function Header() {
   return (
     <NavStyle>
       <ul>
-        <li>Régles du jeu</li>
-        <li>Blind Test</li>
-        <li>Score</li>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/game">Blind Test</Link>
+        </li>
+        <li>
+          <Link to="/score">Score</Link>
+        </li>
       </ul>
     </NavStyle>
   );
