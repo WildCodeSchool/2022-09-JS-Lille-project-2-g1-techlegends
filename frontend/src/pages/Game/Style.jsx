@@ -8,17 +8,54 @@ export default styled.section`
   background-size: contain;
   background-position: center;
 
-    
-    button {
-    height: 2.5%;
-    width: 50%;
-    margin-top: 4rem;
+  .playingGame {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 20%;
+    margin: auto;
+    margin-bottom: 4%;
+    margin-top: 4%;
+    font-size: 1.5rem;
     background-color: #c56e33;
     border: #551e19 2px solid;
     border-radius: 5px;
-    margin-left: 20% ;
-    color : #e5e5e5;
+    color: #e5e5e5;
+    box-shadow: 0px 0px 10px 0px #551e19;
+  }
+  .playingGame:hover {
+    background-color: #551e19;
+    border: #c56e33 solid 2px;
+  }
+
+  .Countdown {
+    text-align: center;
+    width: 15%;
+    margin: auto;
     font-size: 1.5rem;
-  
-  } 
+    background-color: #c56e33;
+    border: #551e19 2px solid;
+    border-radius: 5px;
+    color: #e5e5e5;
+    box-shadow: 0px 0px 10px 0px #551e19;
+    display: block;
+    position: fixed;
+    left: 75%;
+    top: 40%;
+  }
+  .score {
+    text-align: center;
+    width: 15%;
+    margin: auto;
+    font-size: 1.5rem;
+    background-color: #c56e33;
+    border: #551e19 2px solid;
+    border-radius: 5px;
+    color: #e5e5e5;
+    box-shadow: 0px 0px 10px 0px #551e19;
+    display: block;
+    position: fixed;
+    left: 10%;
+    top: 40%;
+  }
 `;
