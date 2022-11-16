@@ -1,25 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-// import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PropTypes from "prop-types";
 
-export default function Countdown(props) {
-  const { startingMinutes = 0, startingSeconds = 5 } = props;
-  const [mins, setMinutes] = useState(startingMinutes);
-  const [secs, setSeconds] = useState(startingSeconds);
+export default function Countdown({ counter }) {
+  const [mins, setMinutes] = useState(0);
+  const [secs, setSeconds] = useState(2);
+
   const navigate = useNavigate();
 
-  // const notime = () =>
-  //   toast.warning("LE TEMPS EST FINI JEUNE CABILLOT !", {
-  //     position: toast.POSITION.TOP_LEFT,
-  //   });
+  const notime = () =>
+    toast.warning(
+      `LE TEMPS EST FINI JEUNE CABILLOT !      Retrouve ton score de ${counter} points dans le tableau des scores!`,
+      {
+        position: toast.POSITION.TOP_LEFT,
+      }
+    );
 
-  // const redirection = () => {
-  //   notime();
-  //   navigate("/score");
-
-  // }
+  const redirection = () => {
+    setTimeout(() => navigate("/score"), 4000);
+    return "";
+  };
 
   useEffect(() => {
     const sampleInterval = setInterval(() => {
@@ -29,6 +31,7 @@ export default function Countdown(props) {
       if (secs === 0) {
         if (mins === 0) {
           clearInterval(sampleInterval);
+          notime();
         } else {
           setMinutes(mins - 1);
           setSeconds(59);
@@ -43,7 +46,7 @@ export default function Countdown(props) {
   return (
     <div>
       {mins === 0 && secs === 0 ? (
-        navigate("/score")
+        redirection()
       ) : (
         <p>
           {" "}
@@ -53,7 +56,7 @@ export default function Countdown(props) {
     </div>
   );
 }
+
 Countdown.propTypes = {
-  startingMinutes: PropTypes.number.isRequired,
-  startingSeconds: PropTypes.number.isRequired,
+  counter: PropTypes.string.isRequired,
 };

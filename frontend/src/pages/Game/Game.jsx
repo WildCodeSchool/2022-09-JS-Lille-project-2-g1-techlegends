@@ -49,7 +49,7 @@ export default function Game() {
             />
           ))}
           <p> SCORE : {counter === 0 ? "0 point" : `${counter} points!`} </p>
-          <Countdown />
+          <Countdown counter={counter} />
         </>
       ) : (
         <li>Relancer le jeu</li>
