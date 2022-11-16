@@ -2,7 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import Style from "./style";
+import Style from "./style";
 
 export default function Button({
   value,
@@ -42,15 +42,15 @@ export default function Button({
     }
   };
   return (
-    // <Style>
-    <button type="button" className="buttonRepsonse" onClick={goodAnswer}>
-      {value
-        .replace(regex, "")
-        .replaceAll("&#39;", "'")
-        .replaceAll("&amp;", "&")
-        .replaceAll("&quot;", '"')}
-    </button>
-    // </Style>
+    <Style>
+      <button type="button" className="buttonRepsonse" onClick={goodAnswer}>
+        {value
+          .replace(regex, "")
+          .replaceAll("&#39;", "'")
+          .replaceAll("&amp;", "&")
+          .replaceAll("&quot;", '"')}
+      </button>
+    </Style>
   );
 }
 
