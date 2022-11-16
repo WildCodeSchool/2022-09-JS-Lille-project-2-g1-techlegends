@@ -4,7 +4,7 @@ export default function Rules() {
   return (
     <RulesStyle>
       <h2>
-        Régles <span>du Jeu</span>
+        Règles <span>du Jeu</span>
       </h2>
       <p>
         Bienvenue dans le blind test proposé par les <span>Tech Legend</span> .
