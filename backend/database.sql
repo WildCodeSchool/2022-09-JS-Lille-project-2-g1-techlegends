@@ -1,6 +1,10 @@
-CREATE TABLE item (
-  id int(11) UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  title varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+DROP TABLE IF EXISTS users;
 
-INSERT INTO item (title) VALUES ('Stuff'), ('Doodads');
+CREATE TABLE
+    users(
+        id int primary key NOT NULL AUTO_INCREMENT,
+        name VARCHAR(255) NOT NULL,
+        score INT,
+    ) ENGINE = innoDB DEFAULT CHARSET = utf8mb3;
+
+INSERT INTO users(name, score) VALUES ('Sax59', '200') 
