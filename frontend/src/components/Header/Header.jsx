@@ -1,6 +1,5 @@
 import NavStyle from "./style";
 
-
 export default function Header() {
   return (
     <NavStyle>

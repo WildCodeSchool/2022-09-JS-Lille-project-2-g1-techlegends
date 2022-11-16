@@ -1,4 +1,3 @@
-
 import Header from "@components/Header/Header";
 import Rules from "@pages/Rules/Rules";
 import HomeStyle from "./style";
