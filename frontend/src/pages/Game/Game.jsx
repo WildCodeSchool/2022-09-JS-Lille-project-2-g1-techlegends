@@ -2,10 +2,9 @@ import cleanDatas from "@assets/mapper";
 import Countdown from "@components/Timer/Timer";
 import Toast from "@components/Toastify/Toast";
 import Response from "@components/Button/Response";
-import Video from "@components/video/Video";
+import Video from "@components/Video/Video";
 import { useState } from "react";
-
-import GameStyle from "./Style";
+import GameStyle from "./style";
 
 export default function Game() {
   const [songs, setSongs] = useState([]);

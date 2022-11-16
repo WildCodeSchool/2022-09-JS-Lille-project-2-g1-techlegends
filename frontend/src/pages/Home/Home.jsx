@@ -1,6 +1,6 @@
 import logo from "@assets/Logo.png";
 import { Link } from "react-router-dom";
-import HomeStyle from "./Style";
+import HomeStyle from "./style";
 
 export default function Home() {
   return (
