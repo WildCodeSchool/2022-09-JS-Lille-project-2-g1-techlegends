@@ -24,7 +24,7 @@ export default function Game() {
   };
   return (
     <GameStyle>
-      <button type="button" onClick={getData}>
+      <button type="button" className="playingGame" onClick={getData}>
         Lancer le jeu
       </button>
       {songs[0] ? (
@@ -42,11 +42,16 @@ export default function Game() {
               getData={getData}
             />
           ))}
-          <p> SCORE : {counter === 0 ? "0 point" : `${counter} points!`} </p>
-          <Countdown />
+
+          <div className="score">
+            <p> SCORE : {counter === 0 ? "0 point" : `${counter} points !`} </p>{" "}
+          </div>
+          <div className="Countdown">
+            <Countdown />
+          </div>
         </>
       ) : (
-        <li>Relancer le jeu</li>
+        <li />
       )}
     </GameStyle>
   );

@@ -41,8 +41,7 @@ export default function Rules() {
           <p>
             C'est assez simple il s'agit d'un jeu dans lequel nous allons vous
             diffuser de la musique et votre objectif est de retrouver le titre.
-            Une série de 10 musiques vous sera proposée, ainsi que quatre
-            réponses.
+            Une série de musiques vous sera proposée, ainsi que quatre réponses.
           </p>
           <p>
             Chaque bonne réponse vous fera gagné 100 points, une mauvaise vous

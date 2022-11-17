@@ -6,5 +6,5 @@ export default styled.article`
   left: 25%;
   max-width: 300px;
   z-index: 10;
-  opacity: 0.8;
+  opacity: 0;
 `;

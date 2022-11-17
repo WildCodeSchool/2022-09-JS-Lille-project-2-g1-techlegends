@@ -4,10 +4,13 @@ export default styled.article`
   .buttonRepsonse {
     display: flex;
     justify-content: center;
+    align-items: center;
     text-align: center;
-    width: 50%;
+    vertical-align: center;
+    width: 40rem;
     margin: auto;
-    margin-top: 3%;
+    margin-top: 1.5rem;
+    height: 3rem;
     font-size: 1rem;
     background-color: #c56e33;
     border: #551e19 2px solid;

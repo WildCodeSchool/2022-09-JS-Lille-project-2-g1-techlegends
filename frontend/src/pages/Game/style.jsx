@@ -3,6 +3,7 @@ import image from "@assets/Transistor.png";
 
 export default styled.section`
   height: 95vh;
+  background-color: purple;
   background-image: url(${image});
   background-repeat: no-repeat;
   background-size: contain;
@@ -13,8 +14,8 @@ export default styled.section`
     text-align: center;
     width: 20%;
     margin: auto;
-    margin-bottom: 4%;
-    margin-top: 4%;
+    margin-bottom: 10rem;
+    margin-top: 5rem;
     font-size: 1.5rem;
     background-color: #c56e33;
     border: #551e19 2px solid;
