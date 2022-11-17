@@ -6,7 +6,7 @@ export default styled.section`
 
   h2 {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding: 2rem 0;
   }
 `;

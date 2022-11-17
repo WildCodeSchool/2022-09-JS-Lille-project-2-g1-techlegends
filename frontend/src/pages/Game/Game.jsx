@@ -24,9 +24,12 @@ export default function Game() {
   };
   return (
     <GameStyle>
-      <button type="button" className="playingGame" onClick={getData}>
-        Lancer le jeu
-      </button>
+      <button
+        type="button"
+        aria-label="button"
+        className="playingGame"
+        onClick={getData}
+      />
       {songs[0] ? (
         <>
           <Toast />
