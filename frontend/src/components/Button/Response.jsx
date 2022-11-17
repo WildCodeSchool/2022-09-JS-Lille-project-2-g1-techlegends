@@ -38,6 +38,7 @@ export default function Button({
     } else {
       notify2();
       setActive(isActive);
+      setCounter(counter - 20);
       getData();
     }
   };
