@@ -10,16 +10,16 @@ export default function Rules() {
 
           <div className="content">
             <div className="leaves">
-              <div className="leaf1">✨</div>
-              <div className="leaf2">✨</div>
-              <div className="leaf3">✨</div>
-              <div className="leaf4">✨</div>
-              <div className="leaf6">✨</div>
-              <div className="leaf7">✨</div>
-              <div className="leaf8">✨</div>
-              <div className="leaf9">✨</div>
-              <div className="leaf10">✨</div>
-              <div className="leaf11">✨</div>
+              <div className="leaf1">♫</div>
+              <div className="leaf2">♫</div>
+              <div className="leaf3">♫</div>
+              <div className="leaf4">♫</div>
+              <div className="leaf6">♫</div>
+              <div className="leaf7">♫</div>
+              <div className="leaf8">♫</div>
+              <div className="leaf9">♫</div>
+              <div className="leaf10">♫</div>
+              <div className="leaf11">♫</div>
             </div>
           </div>
         </section>

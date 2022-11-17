@@ -19,6 +19,7 @@ export default styled.section`
     text-align: center;
     font-size: 2.3rem;
     margin-bottom: 2rem;
+    text-decoration: underline;
   }
   span {
     color: #551e19;
