@@ -4,7 +4,7 @@ export default function AllPlayerScore({ scoreData }) {
   return (
     <ul>
       <li>
-        {scoreData.name}: <span>{scoreData.score}</span>
+        {scoreData.name}: <span>{scoreData.score}</span>pts
       </li>
     </ul>
   );
