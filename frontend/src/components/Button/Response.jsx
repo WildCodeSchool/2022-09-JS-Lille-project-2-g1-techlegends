@@ -1,5 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Style from "./style";
 
 export default function Button({
@@ -9,19 +11,34 @@ export default function Button({
   setCounter,
   getData,
 }) {
-  const [isActive, setActive] = useState(false);
-
   const regex = /\(.*\)|\[.*\]/;
+  const [isActive, setActive] = useState(false);
+  const notify = () =>
+    toast.success("GOOD", {
+      position: toast.POSITION.TOP_LEFT,
+    });
+  const notify2 = () =>
+    toast.error(
+      `VA CHERCHER TON OREILLE ! La bonne réponse est ${answerId
+        .replace(regex, "")
+        .replaceAll("&#39;", "'")
+        .replaceAll("&amp;", "&")
+        .replaceAll("&quot;", '"')}`,
+      {
+        position: toast.POSITION.TOP_LEFT,
+      }
+    );
 
   const goodAnswer = () => {
     if (answerId === value) {
       setActive(!isActive);
-      alert("Bonne réponse");
+      notify();
       setCounter(counter + 100);
       getData();
     } else {
+      notify2();
       setActive(isActive);
-      alert("Mauvaise réponse");
+      setCounter(counter - 20);
       getData();
     }
   };
@@ -37,6 +54,7 @@ export default function Button({
     </Style>
   );
 }
+
 Button.propTypes = {
   value: PropTypes.string.isRequired,
   answerId: PropTypes.string.isRequired,
