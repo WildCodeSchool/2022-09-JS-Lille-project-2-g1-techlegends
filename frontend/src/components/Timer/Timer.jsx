@@ -19,7 +19,7 @@ export default function Countdown({ counter }) {
     );
 
   const redirection = () => {
-    setTimeout(() => navigate("/score"), 4000);
+    setTimeout(() => navigate("/score"), 2000);
     return "";
   };
 
@@ -28,10 +28,14 @@ export default function Countdown({ counter }) {
       if (secs > 0) {
         setSeconds(secs - 1);
       }
+      if (secs === 1) {
+        if (mins === 0) {
+          notime();
+        }
+      }
       if (secs === 0) {
         if (mins === 0) {
           clearInterval(sampleInterval);
-          notime();
         } else {
           setMinutes(mins - 1);
           setSeconds(59);
@@ -58,5 +62,5 @@ export default function Countdown({ counter }) {
 }
 
 Countdown.propTypes = {
-  counter: PropTypes.string.isRequired,
+  counter: PropTypes.number.isRequired,
 };

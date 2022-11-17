@@ -1,18 +1,36 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import NavStyle from "./style";
 
 export default function Header() {
+  const activeStyle = {
+    backgroundColor: "#591b1b",
+  };
   return (
     <NavStyle>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <NavLink
+            to="/"
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            Home
+          </NavLink>
         </li>
         <li>
-          <Link to="/game">Blind Test</Link>
+          <NavLink
+            to="/game"
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            Blind Test
+          </NavLink>
         </li>
         <li>
-          <Link to="/score">Score</Link>
+          <NavLink
+            to="/score"
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            Score
+          </NavLink>
         </li>
       </ul>
     </NavStyle>

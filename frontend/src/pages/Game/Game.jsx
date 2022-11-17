@@ -35,7 +35,7 @@ export default function Game() {
         <>
           <Toast />
           <Video
-            source={`https://www.youtube.com/watch?v=${answerId.videoId}?autoplay=1?start=30`}
+            source={`https://www.youtube.com/watch?v=${answerId.videoId}?autoplay=1&start=30`}
           />
           {songs.map((element) => (
             <Response
