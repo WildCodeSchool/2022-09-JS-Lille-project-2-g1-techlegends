@@ -13,7 +13,7 @@ const customStyles = {
 
 export default function Research() {
   const [modalIsOpen, setIsOpen] = useState(false);
-
+  const [searchValue, setSearchValue] = useState("Official Music Video");
   function openModal() {
     setIsOpen(true);
   }
@@ -35,7 +35,7 @@ export default function Research() {
           <button type="submit" onClick={closeModal}>
             X
           </button>
-          <Search />
+          <Search searchValue={searchValue} setSearchValue={setSearchValue} />
         </form>
       </Modal>
     </>
