@@ -1,12 +1,8 @@
-import { useState } from "react";
+import PropTypes from "prop-types";
 import Style from "./Style";
 
-export default function Search() {
-  const [query, setQuery] = useState("Official Music Video");
-  const changeQuery = (e) => {
-    e.preventDefault();
-  };
-
+export default function Search(props) {
+  const { searchValue, setSearchValue } = props;
   return (
     <Style>
       <h1>Recherche</h1>
@@ -22,14 +18,17 @@ export default function Search() {
           <input
             type="search"
             placeholder="Artiste, Style,..."
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
           />
         </label>
-        <button type="submit" onClick={changeQuery}>
-          Jouer
-        </button>
+        <button type="submit">Jouer</button>
       </form>
     </Style>
   );
 }
+
+Search.propTypes = {
+  searchValue: PropTypes.string.isRequired,
+  setSearchValue: PropTypes.string.isRequired,
+};
