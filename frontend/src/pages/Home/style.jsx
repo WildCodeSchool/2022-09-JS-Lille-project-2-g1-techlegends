@@ -207,4 +207,33 @@ export default styled.section`
     left: 650px;
     animation: fall5 4.7s linear infinite 1.7s;
   }
+
+  @media screen and (max-width: 768px) {
+    .all {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 10% auto;
+    }
+    img {
+      width: 100%;
+      margin-left: 3vw;
+      margin-top: 40px;
+      max-height: 40vh;
+    }
+    p {
+      text-align: center;
+      margin: 0 0;
+      font-size: 1.2rem;
+      padding-left: initial;
+      width: 90%;
+    }
+    .footer {
+      display: none;
+    }
+    .texte {
+      align-items: center;
+      margin-top: 3%;
+    }
+  }
 `;

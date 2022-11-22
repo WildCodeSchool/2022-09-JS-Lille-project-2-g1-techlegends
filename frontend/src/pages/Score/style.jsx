@@ -9,4 +9,11 @@ export default styled.section`
     font-size: 1.3rem;
     padding: 2rem 0;
   }
+
+  @media screen and (max-width: 768px) {
+    height: 100vh;
+    h2 {
+      display: none;
+    }
+  }
 `;

@@ -4,6 +4,7 @@ import Toast from "@components/Toastify/Toast";
 import Response from "@components/Button/Response";
 import Video from "@components/Video/Video";
 import { useState } from "react";
+import image from "@assets/Transistorimg.png";
 import GameStyle from "./style";
 
 export default function Game() {
@@ -61,6 +62,7 @@ export default function Game() {
       ) : (
         <li />
       )}
+      <img className="transistor" alt="transistor" src={image} />
       <section className="footer" />
     </GameStyle>
   );

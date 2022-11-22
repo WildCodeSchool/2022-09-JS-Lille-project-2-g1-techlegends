@@ -152,4 +152,41 @@ export default styled.section`
     margin-top: 35rem;
     height: 7rem;
   }
+
+  img {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    background-image: none;
+    img {
+      display: initial;
+      width: 60%;
+      padding: 0;
+      z-index: -1;
+      margin: 3% 20%;
+    }
+    .footer {
+      display: none;
+    }
+    height: 100vh;
+
+    .score {
+      position: fixed;
+      left: 10%;
+      top: 80px;
+      font-size: 0.8rem;
+      background-image: none;
+    }
+    .Countdown {
+      position: fixed;
+      left: 75%;
+      top: 80px;
+      font-size: 1rem;
+      background-image: none;
+    }
+    article:nth-child(3) {
+      position: fixed;
+    }
+  }
 `;

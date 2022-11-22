@@ -11,7 +11,7 @@ export default styled.article`
     align-items: center;
     text-align: center;
     vertical-align: center;
-    width: 40rem;
+    width: 80%;
     margin: auto;
     margin-top: 1.5rem;
     height: 3rem;
@@ -26,5 +26,15 @@ export default styled.article`
   .buttonRepsonse:hover {
     background-color: #551e19;
     border: #c56e33 solid 2px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .buttonRepsonse {
+      height: 8vh;
+      margin-top: 7%;
+      font-size: 1rem;
+      z-index: 1;
+      background-image: none;
+    }
   }
 `;

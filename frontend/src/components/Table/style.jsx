@@ -3,6 +3,9 @@ import styled from "styled-components";
 export default styled.article`
   display: flex;
   color: #c56e33;
+  p {
+    text-align: center;
+  }
 
   span {
     font-weight: bold;
@@ -22,6 +25,7 @@ export default styled.article`
 
   h4 {
     margin: 0.5rem;
+    text-align: center;
   }
 
   .right,
@@ -35,5 +39,21 @@ export default styled.article`
 
   ul {
     padding: 0 1rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    .right,
+    .left {
+      margin: auto;
+      padding: 0rem;
+      border: none;
+    }
+    li {
+      text-align: center;
+    }
+    h4 {
+      margin-top: 10vh;
+    }
   }
 `;
