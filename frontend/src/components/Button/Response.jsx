@@ -44,7 +44,7 @@ export default function Button({
   };
   return (
     <Style>
-      <button type="button" onClick={goodAnswer}>
+      <button type="button" className="buttonRepsonse" onClick={goodAnswer}>
         {value
           .replace(regex, "")
           .replaceAll("&#39;", "'")

@@ -27,10 +27,13 @@ export default function Game() {
     setAnswerId(shuffle[Math.floor(Math.random() * shuffle.length)]);
   };
   return (
-    <GameStyle>
-      <button type="button" onClick={getData}>
-        Lancer le jeu
-      </button>
+    <GameStyle ClassName="allstyle">
+      <button
+        type="button"
+        aria-label="button"
+        className="playingGame"
+        onClick={getData}
+      />
       {songs[0] ? (
         <>
           <Toast />
@@ -47,12 +50,18 @@ export default function Game() {
               key={element.videoId}
             />
           ))}
-          <p> SCORE : {counter === 0 ? "0 point" : `${counter} points!`} </p>
-          <Countdown counter={counter} />
+
+          <div className="score">
+            <p> SCORE : {counter === 0 ? "0 point" : `${counter} points !`} </p>{" "}
+          </div>
+          <div className="Countdown">
+            <Countdown />
+          </div>
         </>
       ) : (
-        <li>Relancer le jeu</li>
+        <li />
       )}
+      <section className="footer" />
     </GameStyle>
   );
 }
