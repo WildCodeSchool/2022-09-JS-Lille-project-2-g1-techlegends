@@ -4,7 +4,6 @@ import Toast from "@components/Toastify/Toast";
 import Response from "@components/Button/Response";
 import Video from "@components/Video/Video";
 import { useState } from "react";
-import Research from "@components/Reserch/Research";
 import GameStyle from "./style";
 
 export default function Game() {
@@ -32,7 +31,6 @@ export default function Game() {
       <button type="button" onClick={getData}>
         Lancer le jeu
       </button>
-      <Research />
       {songs[0] ? (
         <>
           <Toast />

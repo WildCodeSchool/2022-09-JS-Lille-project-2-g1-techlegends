@@ -4,6 +4,7 @@ import Game from "@pages/Game/Game";
 import Score from "@pages/Score/Score";
 import Header from "@components/Header/Header";
 import "reset-css";
+import Pregame from "@pages/Pregame/Pregame";
 import MainStyle from "./style";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/pregame" element={<Pregame />} />
         <Route path="/game" element={<Game />} />
         <Route path="/score" element={<Score />} />
       </Routes>
