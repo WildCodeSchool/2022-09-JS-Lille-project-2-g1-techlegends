@@ -1,10 +1,8 @@
 import logo from "@assets/Logo.png";
-import { Link } from "react-router-dom";
 
 import RulesStyle from "./style";
 
 export default function Home() {
-
   return (
     <RulesStyle>
       <div className="all">
@@ -58,6 +56,5 @@ export default function Home() {
       </div>
       <section className="footer" />
     </RulesStyle>
-
   );
 }

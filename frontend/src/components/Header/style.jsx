@@ -3,11 +3,8 @@ import Radioclassic from "@assets/RumbleBrave.otf";
 import image3 from "@assets/7.png";
 
 export default styled.nav`
-
-
-  
   color: #c56e33;
-  
+
   ul {
     display: flex;
     justify-content: space-evenly;
@@ -17,8 +14,7 @@ export default styled.nav`
   }
 
   a:visited {
-
-    color:white;
+    color: white;
   }
   li {
     display: flex;

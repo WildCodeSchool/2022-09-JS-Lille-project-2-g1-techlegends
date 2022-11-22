@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export default styled.section`
-  height: 95vh;
+  height: 90vh;
   color: #c56e33;
 
   h2 {

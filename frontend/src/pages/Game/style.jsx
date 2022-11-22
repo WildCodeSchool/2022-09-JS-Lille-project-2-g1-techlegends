@@ -3,14 +3,21 @@ import image from "@assets/Transistor.png";
 import image3 from "@assets/13.jpg";
 import image4 from "@assets/14.jpg";
 import image5 from "@assets/15.jpg";
+import image04 from "@assets/4.png";
 
 export default styled.section`
-  height: 95vh;
+  height: 90vh;
+  overflow: hidden;
+  color: whitesmoke;
   background-color: whitesmoke;
   background-image: url(${image});
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+
+  .allstyle {
+    background-color: whitesmoke;
+  }
   .playingGame {
     -webkit-animation: pulsing 3s cubic-bezier(0.66, 0, 0, 1);
     -moz-animation: pulsing 3s cubic-bezier(0.66, 0, 0, 1);
@@ -20,6 +27,7 @@ export default styled.section`
     transition: all 300ms ease-in-out;
 
     background-image: url(${image5});
+    background-color: whitesmoke;
     background-size: 8rem;
     align-items: center;
     background-repeat: no-repeat;
@@ -30,22 +38,25 @@ export default styled.section`
     text-align: center;
     width: 8rem;
     margin: auto;
-    margin-bottom: 5rem;
-    margin-top: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     font-size: 1.5rem;
     /* background-color: #c56e33; */
     border: #551e19 2px solid;
     border-radius: 5px;
-    color: #e5e5e5;
+    color: whitesmoke;
     box-shadow: 0px 0px 10px 0px #551e19;
   }
 
+  .playingGame:hover {
+    cursor: pointer;
+  }
   a.playingGame:hover {
     -webkit-animation: none;
     -moz-animation: none;
     -ms-animation: none;
     animation: none;
-    color: #ffffff;
+    color: whitesmoke;
   }
 
   /* Animation */
@@ -87,7 +98,7 @@ export default styled.section`
     text-align: center;
     height: 3rem;
     width: 15%;
-    margin: auto;
+
     font-size: 1.5rem;
     font-weight: bold;
     background-color: #ffffff;
@@ -104,13 +115,14 @@ export default styled.section`
     left: 75%;
     top: 40%;
   }
+
   .score {
     background-image: url(${image3});
     background-size: 2.7rem;
     background-repeat: no-repeat;
     text-align: center;
     height: 3rem;
-    width: 15%;
+    width: 17%;
     font-weight: bold;
     margin: auto;
     font-size: 1.2rem;
@@ -127,5 +139,17 @@ export default styled.section`
     position: fixed;
     left: 10%;
     top: 40%;
+  }
+
+  .footer {
+    background-image: url(${image04});
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 0rem;
+    margin-top: 35rem;
+    height: 7rem;
   }
 `;

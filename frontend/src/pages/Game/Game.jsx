@@ -51,7 +51,6 @@ export default function Game() {
             />
           ))}
 
-
           <div className="score">
             <p> SCORE : {counter === 0 ? "0 point" : `${counter} points !`} </p>{" "}
           </div>
@@ -64,6 +63,5 @@ export default function Game() {
       )}
       <section className="footer" />
     </GameStyle>
-
   );
 }
