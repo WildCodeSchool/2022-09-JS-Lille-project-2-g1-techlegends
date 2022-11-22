@@ -13,17 +13,21 @@ export default function Game() {
 
   const getData = () => {
     const shuffle = [];
-
-    for (let i = 0; i < 4; i += 1) {
-      shuffle.push(cleanDatas[Math.floor(Math.random() * cleanDatas.length)]);
+    const randomindexes = [];
+    while (randomindexes.length < 4) {
+      const randomindex = Math.floor(Math.random() * cleanDatas.length);
+      if (randomindexes.includes(randomindex) === false) {
+        randomindexes.push(randomindex);
+      }
     }
-
+    for (let i = 0; i < 4; i += 1) {
+      shuffle.push(cleanDatas[randomindexes[i]]);
+    }
     setSongs(shuffle);
-
     setAnswerId(shuffle[Math.floor(Math.random() * shuffle.length)]);
   };
   return (
-    <GameStyle>
+    <GameStyle ClassName="allstyle">
       <button
         type="button"
         aria-label="button"
@@ -34,7 +38,7 @@ export default function Game() {
         <>
           <Toast />
           <Video
-            source={`https://www.youtube.com/watch?v=${answerId.videoId}?autoplay=1?start=30`}
+            source={`https://www.youtube.com/watch?v=${answerId.videoId}?autoplay=1&start=30`}
           />
           {songs.map((element) => (
             <Response
@@ -43,8 +47,10 @@ export default function Game() {
               counter={counter}
               setCounter={setCounter}
               getData={getData}
+              key={element.videoId}
             />
           ))}
+
 
           <div className="score">
             <p> SCORE : {counter === 0 ? "0 point" : `${counter} points !`} </p>{" "}
@@ -56,6 +62,8 @@ export default function Game() {
       ) : (
         <li />
       )}
+      <section className="footer" />
     </GameStyle>
+
   );
 }

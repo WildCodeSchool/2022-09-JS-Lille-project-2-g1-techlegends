@@ -3,8 +3,11 @@ import Radioclassic from "@assets/RumbleBrave.otf";
 import image3 from "@assets/7.png";
 
 export default styled.nav`
-  color: #c56e33;
 
+
+  
+  color: #c56e33;
+  
   ul {
     display: flex;
     justify-content: space-evenly;
@@ -13,10 +16,13 @@ export default styled.nav`
     background-image: url(${image3});
   }
 
+  a:visited {
+
+    color:white;
+  }
   li {
     display: flex;
     flex-direction: column;
-
     height: 2rem;
     list-style: none;
     font-size: 1.3rem;
@@ -26,14 +32,13 @@ export default styled.nav`
     font-weight: bold;
     /* font-family:myFirstFont; */
     text-decoration-color: #551e19;
+    text-underline-offset: 8px;
     border-left: 0.2rem outset white;
     border-right: 0.2rem solid white;
   }
-
   /* span {
     color: #551e19;
   } */
-
   @font-face {
     font-family: myFirstFont;
     src: url(${Radioclassic});
