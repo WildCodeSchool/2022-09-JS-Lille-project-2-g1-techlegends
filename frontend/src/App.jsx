@@ -30,14 +30,7 @@ function App() {
         />
         <Route
           path="/game"
-          element={
-            <Game
-              searchValue={searchValue}
-              user={user}
-              score={score}
-              setScore={setScore}
-            />
-          }
+          element={<Game searchValue={searchValue} setScore={setScore} />}
         />
         <Route path="/score" element={<Score score={score} user={user} />} />
       </Routes>

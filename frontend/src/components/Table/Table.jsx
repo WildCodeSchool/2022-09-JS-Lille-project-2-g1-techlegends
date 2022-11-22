@@ -1,12 +1,13 @@
+import PropTypes from "prop-types";
 import TableStyle from "./style";
 
-export default function Table() {
+export default function Table({ user, score }) {
   return (
     <TableStyle>
       <div className="right">
-        <h4>Votre Score</h4>
+        <h4>Félicitation {user} vous avez marquer</h4>
         <p>
-          <span>X</span>pts
+          <span>{score}</span>pts
         </p>
       </div>
       <div className="left">
@@ -50,3 +51,8 @@ export default function Table() {
     </TableStyle>
   );
 }
+
+Table.propTypes = {
+  user: PropTypes.string.isRequired,
+  score: PropTypes.string.isRequired,
+};
