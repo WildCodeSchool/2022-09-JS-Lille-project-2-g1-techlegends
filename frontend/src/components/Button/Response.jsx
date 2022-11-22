@@ -42,6 +42,7 @@ export default function Button({
       getData();
     }
   };
+
   return (
     <Style>
       <button type="button" onClick={goodAnswer}>

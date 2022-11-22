@@ -5,17 +5,41 @@ import Score from "@pages/Score/Score";
 import Header from "@components/Header/Header";
 import "reset-css";
 import Pregame from "@pages/Pregame/Pregame";
+import { useState } from "react";
 import MainStyle from "./style";
 
 function App() {
+  const [user, setUser] = useState("Unknow");
+  const [searchValue, setSearchValue] = useState("");
+  const [score, setScore] = useState(0);
   return (
     <MainStyle>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/pregame" element={<Pregame />} />
-        <Route path="/game" element={<Game />} />
-        <Route path="/score" element={<Score />} />
+        <Route
+          path="/pregame"
+          element={
+            <Pregame
+              searchValue={searchValue}
+              setSearchValue={setSearchValue}
+              user={user}
+              setUser={setUser}
+            />
+          }
+        />
+        <Route
+          path="/game"
+          element={
+            <Game
+              searchValue={searchValue}
+              user={user}
+              score={score}
+              setScore={setScore}
+            />
+          }
+        />
+        <Route path="/score" element={<Score score={score} user={user} />} />
       </Routes>
     </MainStyle>
   );

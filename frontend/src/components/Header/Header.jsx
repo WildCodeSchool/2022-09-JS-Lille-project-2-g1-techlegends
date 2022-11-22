@@ -18,7 +18,7 @@ export default function Header() {
         </li>
         <li>
           <NavLink
-            to="/game"
+            to="/pregame"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Blind Test

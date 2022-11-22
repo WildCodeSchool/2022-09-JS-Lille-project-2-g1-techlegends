@@ -1,9 +1,8 @@
+import PropTypes from "prop-types";
 import Search from "@components/Search/Search";
-import { useState } from "react";
 
-export default function Pregame() {
-  const [searchValue, setSearchValue] = useState("Official Music Video");
-  const [user, setUser] = useState("Unknow");
+export default function Pregame(props) {
+  const { searchValue, setSearchValue, user, setUser } = props;
   return (
     <Search
       searchValue={searchValue}
@@ -13,3 +12,10 @@ export default function Pregame() {
     />
   );
 }
+
+Pregame.propTypes = {
+  searchValue: PropTypes.string.isRequired,
+  setSearchValue: PropTypes.func.isRequired,
+  user: PropTypes.string.isRequired,
+  setUser: PropTypes.func.isRequired,
+};
