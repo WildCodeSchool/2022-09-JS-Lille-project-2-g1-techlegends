@@ -5,7 +5,6 @@ import ScoreStyle from "./style";
 export default function Score({ user, score }) {
   return (
     <ScoreStyle>
-      <h2>Score</h2>
       <Table user={user} score={score} />
       <section className="footer" />
     </ScoreStyle>

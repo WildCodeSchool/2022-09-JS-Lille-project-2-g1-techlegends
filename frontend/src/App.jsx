@@ -13,7 +13,7 @@ import MainStyle from "./style";
 function App() {
   const [user, setUser] = useState("Unknow");
   const [searchValue, setSearchValue] = useState("");
-  const [score, setScore] = useState(0);
+  const [counter, setCounter] = useState(0);
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 768px)",
   });
@@ -37,9 +37,15 @@ function App() {
         />
         <Route
           path="/game"
-          element={<Game searchValue={searchValue} setScore={setScore} />}
+          element={
+            <Game
+              searchValue={searchValue}
+              counter={counter}
+              setCounter={setCounter}
+            />
+          }
         />
-        <Route path="/score" element={<Score score={score} user={user} />} />
+        <Route path="/score" element={<Score score={counter} user={user} />} />
       </Routes>
     </MainStyle>
   );

@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import PropTypes from "prop-types";
 
 export default function Countdown({ counter }) {
-  const [mins, setMinutes] = useState(1);
+  const [mins, setMinutes] = useState(0);
   const [secs, setSeconds] = useState(30);
 
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ export default function Countdown({ counter }) {
     );
 
   const redirection = () => {
-    setTimeout(() => navigate("/score"), 120000);
+    setTimeout(() => navigate("/score"), 2000);
     return "";
   };
 

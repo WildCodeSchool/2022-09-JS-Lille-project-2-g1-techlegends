@@ -8,10 +8,9 @@ import axios from "axios";
 import image from "@assets/Transistorimg.png";
 import GameStyle from "./style";
 
-export default function Game({ searchValue }) {
+export default function Game({ searchValue, counter, setCounter }) {
   const [songs, setSongs] = useState([]);
   const [answerId, setAnswerId] = useState("");
-  const [counter, setCounter] = useState(0);
   const [cleanDatas, setCleanDatas] = useState([]);
 
   const keyWord = searchValue.replaceAll(" ", "%20");
@@ -86,4 +85,6 @@ export default function Game({ searchValue }) {
 
 Game.propTypes = {
   searchValue: PropTypes.string.isRequired,
+  counter: PropTypes.number.isRequired,
+  setCounter: PropTypes.func.isRequired,
 };

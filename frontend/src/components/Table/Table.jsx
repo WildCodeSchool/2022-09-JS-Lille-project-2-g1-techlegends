@@ -16,16 +16,21 @@ export default function Table({ user, score }) {
   return (
     <TableStyle>
       <div className="right">
-        <h4>Félicitation {user} vous avez marquer</h4>
+        <h4>
+          Félicitations <span className="superuser">{user}</span> vous êtes un
+          winner !
+        </h4>
         <p>
           <span>{score}</span>pts
         </p>
       </div>
       <div className="left">
-        <h4>Meilleurs Scores</h4>
-        {scores.map((data) => {
-          return <AllPlayerScore key={data.id} scoreData={data} />;
-        })}
+        <h4>Meilleurs Scores :</h4>
+        <ul>
+          {scores.map((data) => {
+            return <AllPlayerScore key={data.id} scoreData={data} />;
+          })}
+        </ul>
       </div>
     </TableStyle>
   );
