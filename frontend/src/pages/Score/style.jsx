@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import image3 from "@assets/4.png";
 
 export default styled.section`
   height: 90vh;
@@ -8,5 +9,13 @@ export default styled.section`
     text-align: center;
     font-size: 1.3rem;
     padding: 2rem 0;
+  }
+  .footer {
+    background-image: url(${image3});
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+    height: 7rem;
   }
 `;
