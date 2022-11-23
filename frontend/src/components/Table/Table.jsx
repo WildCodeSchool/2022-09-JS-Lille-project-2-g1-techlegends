@@ -1,10 +1,10 @@
-import AllPlayerScore from "@components/AllPlayerScore/AllPlyerScore";
 import { useEffect, useState } from "react";
+import AllPlayerScore from "@components/AllPlayerScore/AllPlyerScore";
 import axios from "axios";
-import PersonnalScore from "@components/PersonnalScore/PersonnalScore";
+import PropTypes from "prop-types";
 import TableStyle from "./style";
 
-export default function Table() {
+export default function Table({ user, score }) {
   const [scores, setScores] = useState([]);
 
   useEffect(() => {
@@ -15,9 +15,11 @@ export default function Table() {
 
   return (
     <TableStyle>
-      <div className="left">
-        <h4>Votre Score</h4>
-        <PersonnalScore />
+      <div className="right">
+        <h4>Félicitation {user} vous avez marquer</h4>
+        <p>
+          <span>{score}</span>pts
+        </p>
       </div>
       <div className="left">
         <h4>Meilleurs Scores</h4>
@@ -28,3 +30,8 @@ export default function Table() {
     </TableStyle>
   );
 }
+
+Table.propTypes = {
+  user: PropTypes.string.isRequired,
+  score: PropTypes.string.isRequired,
+};

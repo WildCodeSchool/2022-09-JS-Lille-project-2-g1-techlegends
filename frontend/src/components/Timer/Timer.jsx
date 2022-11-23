@@ -19,7 +19,7 @@ export default function Countdown({ counter }) {
     );
 
   const redirection = () => {
-    setTimeout(() => navigate("/score"), 2000);
+    setTimeout(() => navigate("/score"), 120000);
     return "";
   };
 
