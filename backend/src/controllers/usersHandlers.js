@@ -17,7 +17,6 @@ const getUsers = (req, res) => {
 };
 
 const getUserById = (req, res) => {
-  // const id = parseInt("req.params.id");
   models.users
     .find(req.params.id)
     .then(([user]) => {

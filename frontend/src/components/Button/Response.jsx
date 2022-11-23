@@ -38,12 +38,13 @@ export default function Button({
     } else {
       notify2();
       setActive(isActive);
+      setCounter(counter - 20);
       getData();
     }
   };
   return (
     <Style>
-      <button type="button" onClick={goodAnswer}>
+      <button type="button" className="buttonRepsonse" onClick={goodAnswer}>
         {value
           .replace(regex, "")
           .replaceAll("&#39;", "'")

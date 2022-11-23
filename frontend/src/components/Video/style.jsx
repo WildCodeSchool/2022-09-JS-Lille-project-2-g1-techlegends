@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export default styled.article`
   position: relative;
-  top: 20%;
-  left: 25%;
+  top: -20rem;
+  left: -25rem;
   max-width: 300px;
   z-index: 10;
-  opacity: 0.8;
+  opacity: 0;
 `;

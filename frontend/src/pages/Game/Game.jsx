@@ -4,6 +4,7 @@ import Toast from "@components/Toastify/Toast";
 import Response from "@components/Button/Response";
 import Video from "@components/Video/Video";
 import { useState } from "react";
+import image from "@assets/Transistorimg.png";
 import GameStyle from "./style";
 
 export default function Game() {
@@ -13,25 +14,32 @@ export default function Game() {
 
   const getData = () => {
     const shuffle = [];
-
-    for (let i = 0; i < 4; i += 1) {
-      shuffle.push(cleanDatas[Math.floor(Math.random() * cleanDatas.length)]);
+    const randomindexes = [];
+    while (randomindexes.length < 4) {
+      const randomindex = Math.floor(Math.random() * cleanDatas.length);
+      if (randomindexes.includes(randomindex) === false) {
+        randomindexes.push(randomindex);
+      }
     }
-
+    for (let i = 0; i < 4; i += 1) {
+      shuffle.push(cleanDatas[randomindexes[i]]);
+    }
     setSongs(shuffle);
-
     setAnswerId(shuffle[Math.floor(Math.random() * shuffle.length)]);
   };
   return (
-    <GameStyle>
-      <button type="button" onClick={getData}>
-        Lancer le jeu
-      </button>
+    <GameStyle ClassName="allstyle">
+      <button
+        type="button"
+        aria-label="button"
+        className="playingGame"
+        onClick={getData}
+      />
       {songs[0] ? (
         <>
           <Toast />
           <Video
-            source={`https://www.youtube.com/watch?v=${answerId.videoId}?autoplay=1?start=30`}
+            source={`https://www.youtube.com/watch?v=${answerId.videoId}?autoplay=1&start=30`}
           />
           {songs.map((element) => (
             <Response
@@ -40,14 +48,22 @@ export default function Game() {
               counter={counter}
               setCounter={setCounter}
               getData={getData}
+              key={element.videoId}
             />
           ))}
-          <p> SCORE : {counter === 0 ? "0 point" : `${counter} points!`} </p>
-          <Countdown />
+
+          <div className="score">
+            <p> SCORE : {counter === 0 ? "0 point" : `${counter} points !`} </p>{" "}
+          </div>
+          <div className="Countdown">
+            <Countdown />
+          </div>
         </>
       ) : (
-        <li>Relancer le jeu</li>
+        <li />
       )}
+      <img className="transistor" alt="transistor" src={image} />
+      <section className="footer" />
     </GameStyle>
   );
 }

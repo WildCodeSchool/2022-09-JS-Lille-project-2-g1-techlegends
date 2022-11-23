@@ -15,12 +15,12 @@ export default function Table() {
 
   return (
     <TableStyle>
-      <div className="right">
+      <div className="left">
         <h4>Votre Score</h4>
         <PersonnalScore />
       </div>
       <div className="left">
-        <h4>Meilleur Score</h4>
+        <h4>Meilleurs Scores</h4>
         {scores.map((data) => {
           return <AllPlayerScore key={data.id} scoreData={data} />;
         })}
