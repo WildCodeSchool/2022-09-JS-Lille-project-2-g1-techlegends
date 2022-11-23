@@ -28,6 +28,13 @@ export default styled.article`
     border: #c56e33 solid 2px;
   }
 
+  @media screen and (max-width: 1440px) {
+    .buttonRepsonse {
+      background-color: yellowgreen;
+      margin-top: 1%;
+    }
+  }
+
   @media screen and (max-width: 768px) {
     .buttonRepsonse {
       height: 8vh;

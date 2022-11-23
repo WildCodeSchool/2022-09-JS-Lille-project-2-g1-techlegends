@@ -157,6 +157,10 @@ export default styled.section`
     display: none;
   }
 
+  @media screen and (max-width: 1440px) {
+    height: 100vh;
+  }
+
   @media screen and (max-width: 768px) {
     background-image: none;
     img {
