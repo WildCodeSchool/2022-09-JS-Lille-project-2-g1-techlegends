@@ -2,7 +2,6 @@ import styled from "styled-components";
 import image3 from "@assets/4.png";
 
 export default styled.section`
-  /* height: 8vh; */
   color: #c56e33;
   background-color: white;
   overflow: hidden;
@@ -17,7 +16,6 @@ export default styled.section`
   }
   img {
     width: 35rem;
-    /* margin: 2rem; */
     margin-bottom: 0rem;
     margin-left: 10rem;
   }

@@ -23,9 +23,7 @@ export default styled.section`
     -moz-animation: pulsing 3s cubic-bezier(0.66, 0, 0, 1);
     -ms-animation: pulsing 3s cubic-bezier(0.66, 0, 0, 1);
     animation: pulsing 1.25s 3 cubic-bezier(0.66, 0, 0, 1);
-
     transition: all 300ms ease-in-out;
-
     background-image: url(${image5});
     background-color: whitesmoke;
     background-size: 8rem;
@@ -41,7 +39,6 @@ export default styled.section`
     margin-top: 2rem;
     margin-bottom: 2rem;
     font-size: 1.5rem;
-    /* background-color: #c56e33; */
     border: #551e19 2px solid;
     border-radius: 5px;
     color: whitesmoke;
@@ -86,10 +83,6 @@ export default styled.section`
     }
   }
 
-  /* .playingGame:hover {
-    background-color: #551e19;
-    border: #c56e33 solid 2px;
-  } */
   .Countdown {
     background-image: url(${image4});
     background-size: 2.7rem;
@@ -98,7 +91,6 @@ export default styled.section`
     text-align: center;
     height: 3rem;
     width: 15%;
-
     font-size: 1.5rem;
     font-weight: bold;
     background-color: #ffffff;

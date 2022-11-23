@@ -8,9 +8,6 @@ background-color:#F4F4F6;
   align-items:center;
   justify-content:space-between;
   color: #c56e33;
-  /* p {
-    text-align: center;
-  } */
   margin-right:-5rem;
   
   span {
@@ -102,8 +99,6 @@ font-size:1.5rem;
     padding-left:0rem;
     width:60rem;
     
-   
-    
   }
 
     ul{
@@ -115,8 +110,6 @@ font-size:1.5rem;
     margin-top:-5rem;
     height:30rem;
     
-    
-     
   }
 
   ul {
@@ -170,7 +163,7 @@ text-align:center;
 font-size:1.5rem;
 }
 
-    .right,
+  .right,
   h4 {
     height:initial;
     margin-top:initial;
