@@ -1,15 +1,18 @@
 import PropTypes from "prop-types";
 import Search from "@components/Search/Search";
+import Style from "./style";
 
 export default function Pregame(props) {
   const { searchValue, setSearchValue, user, setUser } = props;
   return (
-    <Search
-      searchValue={searchValue}
-      setSearchValue={setSearchValue}
-      user={user}
-      setUser={setUser}
-    />
+    <Style>
+      <Search
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+        user={user}
+        setUser={setUser}
+      />
+    </Style>
   );
 }
 
