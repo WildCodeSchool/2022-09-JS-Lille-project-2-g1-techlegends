@@ -26,15 +26,12 @@ export default styled.nav`
     padding: 0.4rem;
     color: white;
     font-weight: bold;
-    /* font-family:myFirstFont; */
     text-decoration-color: #551e19;
     text-underline-offset: 8px;
     border-left: 0.2rem outset white;
     border-right: 0.2rem solid white;
   }
-  /* span {
-    color: #551e19;
-  } */
+
   @font-face {
     font-family: myFirstFont;
     src: url(${Radioclassic});
