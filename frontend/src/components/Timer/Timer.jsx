@@ -5,8 +5,8 @@ import "react-toastify/dist/ReactToastify.css";
 import PropTypes from "prop-types";
 
 export default function Countdown({ counter }) {
-  const [mins, setMinutes] = useState(0);
-  const [secs, setSeconds] = useState(2);
+  const [mins, setMinutes] = useState(1);
+  const [secs, setSeconds] = useState(30);
 
   const navigate = useNavigate();
 

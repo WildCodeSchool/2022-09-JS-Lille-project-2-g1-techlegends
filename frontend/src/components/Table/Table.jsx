@@ -3,47 +3,50 @@ import TableStyle from "./style";
 export default function Table() {
   return (
     <TableStyle>
-      <div className="right">
+      <div className="left">
         <h4>Votre Score</h4>
         <p>
-          <span>X</span>pts
+          <span className="points">X</span>pts
         </p>
       </div>
-      <div className="left">
-        <h4>Meilleur Score</h4>
+
+      <div className="right">
+        <h4>Meilleurs Scores</h4>
         <ul>
           <li>
-            P2France : <span>1780 pts</span>
+            <span className="key">♫</span>P2France :{" "}
+            <span className="pts">1780 pts</span>
           </li>
           <li>
-            Vous:<span>1655 pts</span>
+            <span className="key">♫</span>Vous:<span>1655 pts</span>
           </li>
           <li>
-            Hervé: <span>1523 pts</span>
+            <span className="key">♫</span>Hervé: <span>1523 pts</span>
           </li>
           <li>
-            Sax59: <span>1522 pts</span>
+            <span className="key">♫</span>Sax59: <span>1522 pts</span>
           </li>
           <li>
-            Asma: <span>1500 pts</span>
+            <span className="key">♫</span>Asma: <span>1500 pts</span>
           </li>
           <li>
-            Guenk: <span>1495 pts</span>
+            <span className="key">♫</span>Guenk: <span>1495 pts</span>
           </li>
           <li>
-            FbouchezPro: <span>1467 pts</span>
+            <span className="key">♫</span>FbouchezPro: <span>1467 pts</span>
           </li>
           <li>
-            FaeLnBros: <span>1456 pts</span>
+            <span className="key">♫</span>FaeLnBros: <span>1456 pts</span>
           </li>
           <li>
-            Barbu: <span>1398 pts</span>
+            <span className="key">♫</span>Barbu: <span>1398 pts</span>
           </li>
           <li>
-            azahire: <span>1200 pts</span>
+            <span className="key">♫</span>azahire: <span>1200 pts</span>
           </li>
           <li>
-            LadyBugs: <span>err 404 Not Found</span>
+            <span className="key">♫</span>LadyBugs:{" "}
+            <span>err 404 Not Found</span>
           </li>
         </ul>
       </div>
