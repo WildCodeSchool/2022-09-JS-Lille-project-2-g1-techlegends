@@ -222,9 +222,9 @@ export default styled.section`
       max-height: 40vh;
     }
     p {
-      text-align: center;
-      margin: 0 0;
-      font-size: 1.2rem;
+      text-align: justify;
+      margin: 1.1vh 0;
+      font-size: 1.5rem;
       padding-left: initial;
       width: 90%;
     }
@@ -234,6 +234,17 @@ export default styled.section`
     .texte {
       align-items: center;
       margin-top: 3%;
+    }
+
+    span {
+      display: inline;
+    }
+
+    .texte {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0rem;
+      margin: auto;
     }
   }
 `;

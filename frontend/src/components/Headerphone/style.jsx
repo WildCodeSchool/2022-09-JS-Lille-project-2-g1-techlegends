@@ -12,7 +12,7 @@ export default styled.nav`
   }
   button {
     color: white;
-    margin: 18vh auto;
+    margin: 22vh auto;
     font-size: 3rem;
     font-family: "myFirstFont";
     background-color: transparent;

@@ -11,9 +11,9 @@ export default styled.article`
     align-items: center;
     text-align: center;
     vertical-align: center;
-    width: 80%;
+    width: 32%;
     margin: auto;
-    margin-top: 1.5rem;
+    margin-top: 1.3rem;
     height: 3rem;
     font-size: 1rem;
     font-weight: bold;
@@ -31,7 +31,7 @@ export default styled.article`
   @media screen and (max-width: 768px) {
     .buttonRepsonse {
       height: 8vh;
-      margin-top: 7%;
+      margin-top: 9%;
       font-size: 1rem;
       z-index: 1;
       background-image: none;

@@ -20,8 +20,13 @@ export default styled.section`
   }
 
   @media screen and (max-width: 768px) {
-    height: 100vh;
+    background-color: white;
+    height: 100%;
     h2 {
+      display: none;
+    }
+
+    .footer {
       display: none;
     }
   }
